@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>liebiao</title>
+</head>
+<body>
+<form method="post" action="/task/create/">
+	<input type="" name="task">
+	<input type="submit" name="">
+</form>
+<ul>
+	{% for todo in todos %}
+	<li>
+		{{ todo.content }}
+		<form method="post" action="/task/delete/{{todo.id}}/">
+			<input type="hidden" value="_DELETE">
+			<input type="submit" name="">
+		</form>
+	</li>
+	{% endfor %}
+</ul>
+</body>
+</html>
